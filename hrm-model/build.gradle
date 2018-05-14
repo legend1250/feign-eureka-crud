@@ -25,5 +25,6 @@
 
 
 dependencies {
+    compile files('src/main/resources/hrm-jdbc-1.0.0.jar')
     compile ('com.fasterxml.jackson.core:jackson-annotations:2.8.1')
 }

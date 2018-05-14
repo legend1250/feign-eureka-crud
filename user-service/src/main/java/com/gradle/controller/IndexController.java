@@ -13,8 +13,13 @@ public class IndexController {
     @Autowired
     private HelloClient hello;
     
-    @RequestMapping(value = "/getdata")
+    @RequestMapping(value = "/client")
     public String hello(){
         return hello.hello();
+    }
+    
+    @RequestMapping(value = "/test")
+    public Object getData(){
+        return hello.getData();
     }
 }

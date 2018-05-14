@@ -17,6 +17,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @EnableFeignClients
 @FeignClient("hello-service")
 public interface HelloClient {
-    @RequestMapping(value = "/getdata", method = GET)
+    @RequestMapping(value = "/client", method = GET)
     String hello();
+    @RequestMapping(value = "/items/get-all", method = GET)
+    Object getData();
 }
