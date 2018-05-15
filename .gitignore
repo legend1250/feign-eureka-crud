@@ -17,3 +17,5 @@ build/
 spring-thymeleaf-example.iml
 .nb-gradle/
 .settings
+
+!hrm-jdbc-1.0.0.jar
