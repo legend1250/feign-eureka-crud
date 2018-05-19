@@ -2,6 +2,7 @@ rootProject.name = 'hrm-root'
 
 include "eureka-server-sandbox"
 include "hrm-model"
-include "hello-service"
+include "item-service"
 include "user-service"
-
+include "user-service2"
+include "view-service"
