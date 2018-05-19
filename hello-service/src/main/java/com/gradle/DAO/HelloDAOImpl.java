@@ -5,13 +5,11 @@
  */
 package com.gradle.DAO;
 
-import com.gradle.DAO.HelloDAO;
 import com.gradle.model.ItemDTO;
 import com.pms.jdbc.orm.RowMapperUtils;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
