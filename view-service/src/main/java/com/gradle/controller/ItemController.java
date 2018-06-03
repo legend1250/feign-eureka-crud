@@ -5,8 +5,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.gradle.feign.ItemClient;
+import com.gradle.model.ItemDTO;
 import java.util.HashMap;
-import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @Component
@@ -27,5 +30,15 @@ public class ItemController {
         response.put("hello", item.hello());
         response.put("items", item.getData());
         return response;
+    }
+    
+    @RequestMapping(value = "/insert", method = POST)
+    public Object insertOne(@RequestBody ItemDTO itemSubmit){
+        return item.insertOne(itemSubmit);
+    }
+    
+    @RequestMapping(value = "/delete/{id}")
+    public Object deleteOneById(@PathVariable("id") int id){
+        return item.deleteOneById(id);
     }
 }
