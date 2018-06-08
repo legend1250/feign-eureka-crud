@@ -36,8 +36,11 @@ public class ItemDAOImpl implements ItemDAO{
     @Override
     public Object insertOne(ItemDTO item) {
         String sql = "call insert_One_Item(?,?,?)";
-        ItemDTO item_response = jdbcTemplate.queryForObject(sql, RowMapperUtils.getRowMapper(ItemDTO.class), item.getName(), item.getDescription(), created_by);
-        return item_response;
+        ItemDTO item_inserted = jdbcTemplate.queryForObject(sql, RowMapperUtils.getRowMapper(ItemDTO.class), item.getName(), item.getDescription(), created_by);
+        HashMap<String, Object> response = new HashMap<String, Object>();
+        response.put("item_inserted", item_inserted);
+        response.put("status", true);
+        return response;
     }
 
     @Override
